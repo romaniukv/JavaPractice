@@ -1,6 +1,6 @@
 package pract5.task1.model;
 
-public class CuratorsJornal {
+public class Record {
 
     private String firstName;
     private String lastName;
@@ -8,7 +8,11 @@ public class CuratorsJornal {
     private String phoneNumber;
     private String address;
 
-    public CuratorsJornal(String firstName, String lastName, String dateOfBirth, String phoneNumber, String address) {
+    public Record() {
+
+    }
+
+    public Record(String firstName, String lastName, String dateOfBirth, String phoneNumber, String address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
@@ -34,5 +38,16 @@ public class CuratorsJornal {
 
     public String getAddress() {
         return address;
+    }
+
+    @Override
+    public String toString() {
+        return "Record{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", address='" + address + '\'' +
+                '}';
     }
 }
