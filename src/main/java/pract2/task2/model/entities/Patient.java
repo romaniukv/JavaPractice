@@ -5,7 +5,7 @@ public class Patient {
     private String firstName;
     private String lastName;
     private String familyName;
-    private String adress;
+    private String address;
     private String phoneNumber;
     private long medicalCardNumber;
     private String diagnosis;
@@ -13,12 +13,12 @@ public class Patient {
     public Patient() {
     }
 
-    public Patient(String firstName, String lastName, String familyName, String adress,
+    public Patient(String firstName, String lastName, String familyName, String address,
                    String phone, long medicalCardNumber, String diagnosis) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.familyName = familyName;
-        this.adress = adress;
+        this.address = address;
         this.phoneNumber = phone;
         this.medicalCardNumber = medicalCardNumber;
         this.diagnosis = diagnosis;
@@ -48,12 +48,12 @@ public class Patient {
         this.familyName = familyName;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String adress) {
+        this.address = adress;
     }
 
     public String getPhoneNumber() {
@@ -82,7 +82,7 @@ public class Patient {
 
     @Override
     public String toString() {
-        return lastName + " " + firstName + " " + familyName + " Адрес: " + adress + " Телефон: " + phoneNumber +
+        return lastName + " " + firstName + " " + familyName + " Адрес: " + address + " Телефон: " + phoneNumber +
                 " Номер медкарты: " + medicalCardNumber + " Диагноз: " + diagnosis;
     }
 }
