@@ -9,8 +9,9 @@ public class InputUtils {
     public static final String INPUT_DATE_OF_BIRTH = "Input student's date of birth:";
     public static final String INPUT_PRHONE_NUMBER = "Input student's phone number:";
     public static final String INPUT_ADDRES = "Input student's address:";
+    public static final String INPUT_ERROR = "Input error! Try again.";
 
-    public static final String REGEX_NAME = "";
+    public static final String REGEX_NAME = "^[A-Z]{1}[a-z]+$";
     public static final String REGEX_DATE_OF_BIRTH = "";
     public static final String REGEX_PRHONE_NUMBER = "";
     public static final String REGEX_ADDRES = "";
@@ -19,8 +20,12 @@ public class InputUtils {
 
     public static String inputString(String msg, String regex) {
         System.out.println(msg);
-        String result = in.nextLine();
-
-        return result;
+        while (true) {
+            String str = in.nextLine();
+            if (str.matches(regex))
+                return str;
+            else
+                System.out.println(INPUT_ERROR);
+        }
     }
 }
