@@ -10,6 +10,11 @@ public class InputUtils {
     public static final String INPUT_PRHONE_NUMBER = "Input student's phone number:";
     public static final String INPUT_ADDRES = "Input student's address:";
 
+    public static final String REGEX_NAME = "";
+    public static final String REGEX_DATE_OF_BIRTH = "";
+    public static final String REGEX_PRHONE_NUMBER = "";
+    public static final String REGEX_ADDRES = "";
+
     private static Scanner in = new Scanner(System.in);
 
     public static String inputString(String msg, String regex) {
