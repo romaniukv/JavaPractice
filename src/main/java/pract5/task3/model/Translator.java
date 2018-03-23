@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Translator {
 
-    private static Map<String, String> dictionary= new HashMap<>();
+    private Map<String, String> dictionary= new HashMap<>();
 
     public void addWord(String englishWord, String russianWord) {
         dictionary.put(englishWord, russianWord);
