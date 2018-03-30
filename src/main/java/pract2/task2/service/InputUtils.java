@@ -6,13 +6,15 @@ public class InputUtils {
 
     private static Scanner in = new Scanner(System.in);
 
-    public static String inputString() {
-        return in.nextLine();
-    }
-
-    public static int InputInt() {
+    public static int inputInt(String msg) {
+        System.out.println(msg);
         int result = in.nextInt();
         in.nextLine();
         return result;
+    }
+
+    public static String inputString(String msg) {
+        System.out.println(msg);
+        return in.nextLine();
     }
 }

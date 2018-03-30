@@ -4,6 +4,7 @@ import pract2.task2.model.PatientUtils;
 import pract2.task2.service.InputUtils;
 import pract2.task2.view.Viewer;
 
+import javax.swing.text.View;
 import java.util.Scanner;
 
 public class Runner {
@@ -13,21 +14,18 @@ public class Runner {
         Scanner in = new Scanner(System.in);
         PatientUtils patientUtils = new PatientUtils();
         patientUtils.generatePatientList();
-        while (key != 6) {
+        while (key != 8) {
             System.out.println(Viewer.MENU);
             key = in.nextInt();
             in.nextLine();
             switch (key) {
                 case 1:
-                    System.out.println(Viewer.INPUT_DIAGNOSIS);
-                    String diagnosis = InputUtils.inputString();
+                    String diagnosis = InputUtils.inputString(Viewer.INPUT_DIAGNOSIS);
                     Viewer.showPatientList(patientUtils.searchByDiagnosis(diagnosis));
                     break;
                 case 2:
-                    System.out.println(Viewer.INPUT_START_INT);
-                    int num1 = InputUtils.InputInt();
-                    System.out.println(Viewer.INPUT_END_INT);
-                    int num2 = InputUtils.InputInt();
+                    int num1 = InputUtils.inputInt(Viewer.INPUT_START_INT);
+                    int num2 = InputUtils.inputInt(Viewer.INPUT_END_INT);
                     Viewer.showPatientList(patientUtils.searchByMedicalCardNumber(num1, num2));
                     break;
                 case 3:
@@ -40,6 +38,14 @@ public class Runner {
                     patientUtils.generatePatientList();
                     break;
                 case 6:
+                    String writeFileName = InputUtils.inputString(Viewer.INPUT_FILE_NAME);
+                    patientUtils.saveListToFile(writeFileName);
+                    break;
+                case 7:
+                    String readFileName = InputUtils.inputString(Viewer.INPUT_FILE_NAME);
+                    Viewer.showPatientList(patientUtils.readListFromFile(readFileName));
+                    break;
+                case 8:
                     break;
                 default:
                     System.out.println(Viewer.INPUT_ERROR);

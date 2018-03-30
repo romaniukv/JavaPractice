@@ -1,9 +1,13 @@
 package pract2.task2.model;
 
+import com.sun.corba.se.impl.orbutil.ObjectWriter;
 import pract2.task2.model.entities.Patient;
+import pract2.task2.view.Viewer;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 
 public class PatientUtils {
     private ArrayList<Patient> patients = new ArrayList<>();
@@ -23,6 +27,29 @@ public class PatientUtils {
             else
                 i--;
         }
+    }
+
+    public void saveListToFile(String fileName) {
+        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(fileName))) {
+            outputStream.writeObject(patients);
+            outputStream.flush();
+        } catch (FileNotFoundException e) {
+            System.out.println(Viewer.FILE_NOT_FOUND);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public List<Patient> readListFromFile(String fileName) {
+        List<Patient> result = new ArrayList<>();
+        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(fileName))) {
+            result = (List<Patient>) inputStream.readObject();
+        } catch (FileNotFoundException e) {
+            System.out.println(Viewer.FILE_NOT_FOUND);
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 
     public ArrayList<Patient> searchByDiagnosis(String diagnosis) {

@@ -1,6 +1,8 @@
 package pract2.task2.model.entities;
 
-public class Patient {
+import java.io.Serializable;
+
+public class Patient implements Serializable{
 
     private String firstName;
     private String lastName;
