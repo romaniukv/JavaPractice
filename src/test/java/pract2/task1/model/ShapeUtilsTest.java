@@ -9,8 +9,6 @@ import pract2.task1.model.entities.Rectangle;
 import pract2.task1.model.entities.Shape;
 import pract2.task1.model.entities.Triangle;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.Assert.*;
 
