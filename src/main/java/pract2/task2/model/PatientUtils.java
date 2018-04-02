@@ -1,13 +1,10 @@
 package pract2.task2.model;
 
-import com.sun.corba.se.impl.orbutil.ObjectWriter;
 import pract2.task2.model.entities.Patient;
-import pract2.task2.view.Viewer;
 
-import java.io.*;
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.List;
+
 
 public class PatientUtils {
     private ArrayList<Patient> patients = new ArrayList<>();
