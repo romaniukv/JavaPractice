@@ -4,7 +4,6 @@ import pract2.task2.model.PatientUtils;
 import pract2.task2.service.InputUtils;
 import pract2.task2.view.Viewer;
 
-import javax.swing.text.View;
 import java.util.Scanner;
 
 public class Runner {

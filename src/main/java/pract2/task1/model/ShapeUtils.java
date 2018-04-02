@@ -16,6 +16,10 @@ public class ShapeUtils {
         shapes = createShapeArray();
     }
 
+    public ShapeUtils(Shape[] shapes) {
+        this.shapes = shapes;
+    }
+
     public float calculateTotalArea() {
         float totalArea = 0;
         for(Shape shape: shapes)

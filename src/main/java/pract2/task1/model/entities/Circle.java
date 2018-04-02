@@ -23,7 +23,7 @@ public class Circle extends Shape {
 
     @Override
     public float calcArea() {
-        return (float) (Math.PI * radius);
+        return (float) (Math.PI * radius * radius);
     }
 
     @Override
