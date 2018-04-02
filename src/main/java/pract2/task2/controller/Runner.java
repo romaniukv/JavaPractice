@@ -3,6 +3,7 @@ package pract2.task2.controller;
 import pract2.task2.model.PatientUtils;
 import pract2.task2.service.InputUtils;
 import pract2.task2.view.Viewer;
+import pract6.SerializationUtils;
 
 import java.util.Scanner;
 
@@ -38,11 +39,11 @@ public class Runner {
                     break;
                 case 6:
                     String writeFileName = InputUtils.inputString(Viewer.INPUT_FILE_NAME);
-                    patientUtils.saveListToFile(writeFileName);
+                    SerializationUtils.saveListToFile(writeFileName, patientUtils.getPatients());
                     break;
                 case 7:
                     String readFileName = InputUtils.inputString(Viewer.INPUT_FILE_NAME);
-                    Viewer.showPatientList(patientUtils.readListFromFile(readFileName));
+                    Viewer.showPatientList(SerializationUtils.readListFromFile(readFileName, patientUtils.getPatients()));
                     break;
                 case 8:
                     break;

@@ -29,29 +29,6 @@ public class PatientUtils {
         }
     }
 
-    public void saveListToFile(String fileName) {
-        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(fileName))) {
-            outputStream.writeObject(patients);
-            outputStream.flush();
-        } catch (FileNotFoundException e) {
-            System.out.println(Viewer.FILE_NOT_FOUND);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public List<Patient> readListFromFile(String fileName) {
-        List<Patient> result = new ArrayList<>();
-        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(fileName))) {
-            result = (List<Patient>) inputStream.readObject();
-        } catch (FileNotFoundException e) {
-            System.out.println(Viewer.FILE_NOT_FOUND);
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return result;
-    }
-
     public ArrayList<Patient> searchByDiagnosis(String diagnosis) {
         ArrayList<Patient> result = new ArrayList<>();
         for(Patient patient: patients) {
