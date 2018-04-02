@@ -31,14 +31,15 @@ public class ShapeUtilsTest {
     }
 
     @Test
+    public void calculateTotalAreaByType() {
+        float result = shapeUtils.calculateTotalAreaByType("Rectangle");
+        assertEquals(826.5, result, 0.01);
+    }
+
+    @Test
     public void calculateTotalArea() {
         float result = shapeUtils.calculateTotalArea();
         assertEquals(1146.65, result, 0.01);
     }
 
-    @Test
-    public void calculateTotalAreaByType() {
-        float result = shapeUtils.calculateTotalAreaByType("Rectangle");
-        assertEquals(826.5, result, 0.01);
-    }
 }
