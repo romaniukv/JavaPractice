@@ -29,7 +29,7 @@ public class SerializationUtils {
         }
     }
 
-    public  static List<Patient> readListFromFile(String fileName, List<Patient> patients) {
+    public  static List<Patient> readListFromFile(String fileName) {
         List<Patient> result = new ArrayList<>();
         try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(fileName))) {
             logger.info("Restoring patients list from file: " + fileName);
