@@ -49,8 +49,7 @@ public class Viewer {
 
     public static void changeInterface() {
         System.out.println("1. Українська\n2. Русский");
-        int key = 0;
-
+        int key;
         outer: while(true) {
             key = InputUtils.inputInt("");
             switch (key) {
@@ -59,7 +58,7 @@ public class Viewer {
                     updateLocale();
                     break outer;
                 case 2:
-                    ResourceManager.getInstance().changeResource(new Locale("RU", "ru"));
+                    ResourceManager.getInstance().changeResource(Locale.getDefault());
                     updateLocale();
                     break outer;
                 default:
