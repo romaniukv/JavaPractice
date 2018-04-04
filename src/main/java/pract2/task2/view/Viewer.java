@@ -54,11 +54,11 @@ public class Viewer {
             key = InputUtils.inputInt("");
             switch (key) {
                 case 1:
-                    ResourceManager.getInstance().changeResource(new Locale("UA", "uk"));
+                    ResourceManager.getInstance().changeResource(Locale.getDefault());
                     updateLocale();
                     break outer;
                 case 2:
-                    ResourceManager.getInstance().changeResource(Locale.getDefault());
+                    ResourceManager.getInstance().changeResource(new Locale("UA", "uk"));
                     updateLocale();
                     break outer;
                 default:
