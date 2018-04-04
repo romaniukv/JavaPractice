@@ -1,28 +1,38 @@
 package pract2.task2.view;
 
 import pract2.task2.model.entities.Patient;
+import pract2.task2.service.InputUtils;
+import pract7.task2.ResourceManager;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class Viewer {
 
-    public static String INPUT_DIAGNOSIS = "Введите диагноз:";
-    public static String INPUT_START_INT = "Введите стартовый номер медкарты:";
-    public static String INPUT_END_INT = "Введите конечный номер медкраты:";
-    public static String INPUT_ERROR = "Ошибка ввода";
-    public static String INPUT_FILE_NAME = "Введите имя и путь к файлу:";
-    public static String FILE_NOT_FOUND = "Файл не найден!";
-    public static String MENU = "1. Получить список пациентов, которые имеют указанный диагноз.\n" +
-            "2. Получить список пациентов, у которых номер\n" +
-            "медицинской карточки находится в заданном диапазоне.\n" +
-            "3. Упорядочить пациентов в алфавитном порядке\n" +
-            "согласно фамилии.\n" +
-            "4. Вывести набор пациентов.\n" +
-            "5. Сгенерировать новый набор пациентов.\n" +
-            "6. Сохранить набор обьектов в файл.\n" +
-            "7. Прочитать набор обьектов из файла.\n" +
-            "8. Выход";
+    public static String INPUT_DIAGNOSIS;
+    public static String INPUT_START_INT;
+    public static String INPUT_END_INT;
+    public static String INPUT_ERROR;
+    public static String INPUT_FILE_NAME;
+    public static String FILE_NOT_FOUND ;
+    public static String MENU;
+
+    private static ResourceManager resourceManager = ResourceManager.getInstance();
+
+    static {
+        updateLocale();
+    }
+
+    private static void updateLocale() {
+        INPUT_DIAGNOSIS = resourceManager.getString("input_diagnosis");
+        INPUT_START_INT = resourceManager.getString("input_start_int");
+        INPUT_END_INT = resourceManager.getString("input_end_int");
+        INPUT_ERROR = resourceManager.getString("input_error");
+        INPUT_FILE_NAME = resourceManager.getString("input_file_name");
+        FILE_NOT_FOUND = resourceManager.getString("file_not_found");
+        MENU = resourceManager.getString("menu");
+    }
 
 
 
@@ -33,6 +43,27 @@ public class Viewer {
         else {
             for (Patient patient : patientList) {
                 System.out.println(patient);
+            }
+        }
+    }
+
+    public static void changeInterface() {
+        System.out.println("1. Українська\n2. Русский");
+        int key = 0;
+
+        outer: while(true) {
+            key = InputUtils.inputInt("");
+            switch (key) {
+                case 1:
+                    ResourceManager.getInstance().changeResource(new Locale("UA", "uk"));
+                    updateLocale();
+                    break outer;
+                case 2:
+                    ResourceManager.getInstance().changeResource(new Locale("RU", "ru"));
+                    updateLocale();
+                    break outer;
+                default:
+                    System.out.println(Viewer.INPUT_ERROR);
             }
         }
     }

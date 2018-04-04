@@ -14,7 +14,7 @@ public class Runner {
         Scanner in = new Scanner(System.in);
         PatientUtils patientUtils = new PatientUtils();
         patientUtils.generatePatientList();
-        while (key != 8) {
+        while (key != 9) {
             System.out.println(Viewer.MENU);
             key = in.nextInt();
             in.nextLine();
@@ -43,9 +43,12 @@ public class Runner {
                     break;
                 case 7:
                     String readFileName = InputUtils.inputString(Viewer.INPUT_FILE_NAME);
-                    Viewer.showPatientList(SerializationUtils.readListFromFile(readFileName, patientUtils.getPatients()));
+                    Viewer.showPatientList(SerializationUtils.readListFromFile(readFileName));
                     break;
                 case 8:
+                    Viewer.changeInterface();
+                    break;
+                case 9:
                     break;
                 default:
                     System.out.println(Viewer.INPUT_ERROR);
