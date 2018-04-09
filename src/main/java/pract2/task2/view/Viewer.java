@@ -58,7 +58,7 @@ public class Viewer {
                     updateLocale();
                     break outer;
                 case 2:
-                    ResourceManager.getInstance().changeResource(new Locale("UA", "uk"));
+                    ResourceManager.getInstance().changeResource(new Locale("RU", "ru"));
                     updateLocale();
                     break outer;
                 default:
