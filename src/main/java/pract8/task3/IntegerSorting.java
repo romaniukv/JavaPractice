@@ -22,6 +22,10 @@ public class IntegerSorting {
         }
     }
 
+    public List<Integer> getIntegers() {
+        return integers;
+    }
+
     @Override
     public String toString() {
         return integers.toString();

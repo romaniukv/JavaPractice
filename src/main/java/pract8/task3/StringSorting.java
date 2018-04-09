@@ -21,6 +21,10 @@ public class StringSorting {
         strings.sort((s1, s2) -> s1.compareTo(s2) * -1);
     }
 
+    public List<String> getStrings() {
+        return strings;
+    }
+
     @Override
     public String toString() {
         return strings.toString();
