@@ -1,7 +1,7 @@
 package pract8.task2;
 
-import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 public class Runner {
 
@@ -10,12 +10,11 @@ public class Runner {
             Class<UnaryArithmeticOperation> operationClass = UnaryArithmeticOperation.class;
             UnaryArithmeticOperation unaryArithmeticOperation =
                     operationClass.getDeclaredConstructor(double.class).newInstance(56.8);
-            Field value = operationClass.getDeclaredField("value");
             System.out.println("Old value:\n" + unaryArithmeticOperation);
-            value.setAccessible(true);
-            value.set(unaryArithmeticOperation, 20.3);
+            Method method = operationClass.getDeclaredMethod("setValue", double.class);
+            method.invoke(unaryArithmeticOperation, 20.3);
             System.out.println("New value:\n" + unaryArithmeticOperation);
-        } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException | NoSuchFieldException e) {
+        } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
             e.printStackTrace();
         }
     }
