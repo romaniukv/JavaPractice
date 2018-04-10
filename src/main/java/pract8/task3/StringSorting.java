@@ -2,6 +2,7 @@ package pract8.task3;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class StringSorting {
@@ -18,7 +19,7 @@ public class StringSorting {
     }
 
     public void sort() {
-        strings.sort((s1, s2) -> s1.compareTo(s2) * -1);
+        strings.sort(Comparator.reverseOrder());
     }
 
     public List<String> getStrings() {
