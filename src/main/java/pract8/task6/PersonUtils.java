@@ -15,13 +15,14 @@ public class PersonUtils {
     }
 
     public List<Person> collectWarMans() {
-        List<Person> warMans = people.stream()
-                .filter(person -> person.getGender() == Gender.MALE && person.getAge() >= 20).collect(Collectors.toList());
-        return warMans;
+        return people.stream()
+                .filter(person -> person.getGender() == Gender.MALE && person.getAge() >= 20)
+                .collect(Collectors.toList());
     }
 
     public double countAverageFemalesAge() {
-        OptionalInt optionalInt = people.stream().filter(person -> person.getGender() == Gender.FEMALE)
+        OptionalInt optionalInt = people.stream()
+                .filter(person -> person.getGender() == Gender.FEMALE)
                 .mapToInt(Person::getAge)
                 .reduce((age1, age2) -> age1 + age2);
         int totalAge;
@@ -32,7 +33,9 @@ public class PersonUtils {
             return 0;
         }
 
-        int numOfFemales = (int) people.stream().filter(person -> person.getGender() == Gender.FEMALE).count();
+        int numOfFemales = (int) people.stream()
+                .filter(person -> person.getGender() == Gender.FEMALE)
+                .count();
 
         return (double) totalAge / numOfFemales;
     }

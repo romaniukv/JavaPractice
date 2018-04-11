@@ -13,7 +13,15 @@ public class Runner {
         System.out.println("**************************************************");
 
         PersonUtils personUtils = new PersonUtils();
-        System.out.println(personUtils.collectWarMans());
+
+        System.out.println("Военнообязанные мужчины:");
+        printList(personUtils.collectWarMans());
+
+        System.out.println("Средний возраст женщин:");
         System.out.println(personUtils.countAverageFemalesAge());
+    }
+
+    private void printList(List<Person> people) {
+        people.forEach(System.out::println);
     }
 }
