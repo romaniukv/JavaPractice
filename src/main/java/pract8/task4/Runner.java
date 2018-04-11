@@ -2,6 +2,7 @@ package pract8.task4;
 
 import pract8.task3.IntegerSorting;
 import pract8.task3.StringSorting;
+import pract8.task5.Task5;
 
 import java.util.List;
 
