@@ -17,7 +17,6 @@ public class PersonUtils {
     public List<Person> collectWarMans() {
         List<Person> warMans = people.stream()
                 .filter(person -> person.getGender() == Gender.MALE && person.getAge() >= 20).collect(Collectors.toList());
-        System.out.println(warMans);
         return warMans;
     }
 

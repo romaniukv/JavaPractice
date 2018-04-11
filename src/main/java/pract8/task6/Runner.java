@@ -13,7 +13,7 @@ public class Runner {
         System.out.println("**************************************************");
 
         PersonUtils personUtils = new PersonUtils();
-        personUtils.collectWarMans();
+        System.out.println(personUtils.collectWarMans());
         System.out.println(personUtils.countAverageFemalesAge());
     }
 }
