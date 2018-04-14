@@ -5,7 +5,7 @@ public interface StringConverter {
 
     String convert(String string);
 
-    static boolean checkString(String string) {
+    default boolean checkString(String string) {
         if (string == null)
             return false;
         return  true;
