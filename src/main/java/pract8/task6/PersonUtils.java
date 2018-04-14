@@ -16,7 +16,7 @@ public class PersonUtils {
 
     public List<Person> collectWarMans() {
         return people.stream()
-                .filter(person -> person.getGender() == Gender.MALE && person.getAge() >= 20)
+                .filter(person -> person.getGender() == Gender.MALE && person.getAge() >= 20 && person.getAge() <= 60)
                 .collect(Collectors.toList());
     }
 
