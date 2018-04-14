@@ -14,7 +14,6 @@ public class Runner {
             }
             System.out.println("Bomb");
         });
-
         thread.start();
     }
 }
