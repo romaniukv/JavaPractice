@@ -1,15 +1,20 @@
-package task10.model;
+package pract10.entities;
 
 public class Task {
 
     private int id;
     private String description;
-    private int staff_id;
+    private int staffId;
 
-    public Task(int id, String description, int staff_id) {
+    public Task(String description, int staffId) {
+        this.description = description;
+        this.staffId = staffId;
+    }
+
+    public Task(int id, String description, int staffId) {
         this.id = id;
         this.description = description;
-        this.staff_id = staff_id;
+        this.staffId = staffId;
     }
 
     public int getId() {
@@ -28,12 +33,12 @@ public class Task {
         this.description = description;
     }
 
-    public int getStaff_id() {
-        return staff_id;
+    public int getStaffId() {
+        return staffId;
     }
 
-    public void setStaff_id(int staff_id) {
-        this.staff_id = staff_id;
+    public void setStaffId(int staffId) {
+        this.staffId = staffId;
     }
 
     @Override
@@ -41,7 +46,7 @@ public class Task {
         return "Task{" +
                 "id=" + id +
                 ", description='" + description + '\'' +
-                ", staff_id=" + staff_id +
+                ", staffId=" + staffId +
                 '}';
     }
 }

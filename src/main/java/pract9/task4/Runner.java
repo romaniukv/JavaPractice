@@ -28,7 +28,8 @@ public class Runner {
                 CalculateArrSum calculateFirstHalf = new CalculateArrSum(firstHalf);
                 calculateFirstHalf.fork();
 
-                int[] secondHalf = Arrays.copyOfRange(arr, arr.length / 2, arr.length);
+                int[] secondHalf = Arrays.copyOfRange(arr,
+                        arr.length / 2, arr.length);
                 CalculateArrSum calculateSecondHalf = new CalculateArrSum(secondHalf);
                 long secondHalfResult = calculateSecondHalf.compute();
 

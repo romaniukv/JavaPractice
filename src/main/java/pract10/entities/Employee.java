@@ -1,13 +1,13 @@
-package task10.model;
+package pract10.entities;
 
-public class Staff {
+public class Employee {
     private int id;
     private String lastName;
     private String firstName;
     private String position;
     private int department_id;
 
-    public Staff(int id, String lastName, String firstName, String position, int department_id) {
+    public Employee(int id, String lastName, String firstName, String position, int department_id) {
         this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
@@ -57,7 +57,7 @@ public class Staff {
 
     @Override
     public String toString() {
-        return "Staff{" +
+        return "Employee{" +
                 "id=" + id +
                 ", lastName='" + lastName + '\'' +
                 ", firstName='" + firstName + '\'' +

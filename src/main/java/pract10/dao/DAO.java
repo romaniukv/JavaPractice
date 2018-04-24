@@ -1,4 +1,4 @@
-package task10.dao;
+package pract10.dao;
 
 public interface DAO<K, T> {
 
